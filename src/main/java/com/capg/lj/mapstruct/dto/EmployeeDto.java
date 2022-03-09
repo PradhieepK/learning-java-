@@ -1,34 +1,42 @@
 package com.capg.lj.mapstruct.dto;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
 
 public class EmployeeDto {
-
-	private int EmployeeId;
 	
+	@Id
+	@Column(name="ID")
+	private int employeeId;
+	
+	@Column(name="name")
 	private String name;
 	
+	@Column(name="emailId")
 	private String emailId;
+	
+	
 
 	public EmployeeDto() {
 		super();
-		
+		// TODO Auto-generated constructor stub
 	}
 	
 
 	public EmployeeDto(int employeeId, String name, String emailId) {
 		super();
-		EmployeeId = employeeId;
+		this.employeeId = employeeId;
 		this.name = name;
 		this.emailId = emailId;
 	}
 
 
 	public int getEmployeeId() {
-		return EmployeeId;
+		return employeeId;
 	}
 
 	public void setEmployeeId(int employeeId) {
-		EmployeeId = employeeId;
+		this.employeeId = employeeId;
 	}
 
 	public String getName() {
@@ -50,8 +58,15 @@ public class EmployeeDto {
 
 	@Override
 	public String toString() {
-		return "EmployeeDto [EmployeeId=" + EmployeeId + ", name=" + name + ", emailId=" + emailId + "]";
+		return "EmployeeDto [employeeId=" + employeeId + ", name=" + name + ", emailId=" + emailId + "]";
 	}
 	
 	
+	
+
+	
+	
+	
+	
+
 }

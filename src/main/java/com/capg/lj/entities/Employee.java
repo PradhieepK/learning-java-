@@ -10,9 +10,9 @@ import javax.persistence.Id;
 public class Employee {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO )
 	@Column(name="ID")
-	private int EmployeeId;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int employeeId;
 	
 	@Column(name="name")
 	private String name;
@@ -20,27 +20,28 @@ public class Employee {
 	@Column(name="emailId")
 	private String emailId;
 	
+	
 
 	public Employee() {
 		super();
-
+		// TODO Auto-generated constructor stub
 	}
 	
 
 	public Employee(int employeeId, String name, String emailId) {
 		super();
-		EmployeeId = employeeId;
+		this.employeeId = employeeId;
 		this.name = name;
 		this.emailId = emailId;
 	}
 
 
 	public int getEmployeeId() {
-		return EmployeeId;
+		return employeeId;
 	}
 
 	public void setEmployeeId(int employeeId) {
-		EmployeeId = employeeId;
+		this.employeeId = employeeId;
 	}
 
 	public String getName() {
@@ -59,10 +60,16 @@ public class Employee {
 		this.emailId = emailId;
 	}
 
+
 	@Override
 	public String toString() {
-		return "Employee [EmployeeId=" + EmployeeId + ", name=" + name + ", emailId=" + emailId + "]";
+		return "Employee [employeeId=" + employeeId + ", name=" + name + ", emailId=" + emailId + "]";
 	}
+	
+	
+	
+
+	
 	
 	
 	
